@@ -4,28 +4,23 @@ import java.util.Arrays;
 
 public class PermMissingElem {
     public static int solution (int[] A){
-        int size = A.length-1;
-        int min = A[0];
-        if (size == 1){
-            return min;
-        }
-
         Arrays.sort(A);
 
-        int missingElem = 0;
-            for (int j = 0; j < A.length+1; j++) {
-//                int k = A[j];
-//                if (k != j){
-//                    missingElem = k;
-//                }
-                //TODO: complete function
-            }
-
-        return missingElem;
+        int a, b, c;
+        for (int i = 0; i < A.length+1; i++) {
+                a = A[i];
+                b = A[i+1];
+                if (b - a != 1){
+                    c = b - 1;
+                    return c;
+                }
+        }
+        return 0;
     }
 
     public static void main(String[] args) {
-        int[] myArray = {2, 3, 1, 4, 5, 7};
+        int[] myArray = {2, 3, 1, 5};
+        //              {1, 2, 3, 5}
 
         System.out.println("The missing element in your array is: "+solution(myArray));
     }
