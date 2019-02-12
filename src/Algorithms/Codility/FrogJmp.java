@@ -24,6 +24,14 @@ public class FrogJmp {
         return (Y - X + D - 1)/D;
     }
 
+    // and this solution...
+    public static int solution3 (int X, int Y, int D){
+        if((Y-X) % D == 0)
+            return (Y-X)/D;
+        else
+            return (Y-X)/D+1;
+    }
+
     public static void main(String[] args) {
         System.out.println(solution2(10, 85, 30));
     }
