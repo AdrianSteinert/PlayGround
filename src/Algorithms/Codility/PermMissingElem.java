@@ -20,21 +20,6 @@ public class PermMissingElem {
         return 0;
     }
 
-    public static int solution2 (int[] A){
-        Arrays.sort(A);
-
-        List<Integer> aList = new ArrayList<>();
-
-        int arrayElem = 0;
-
-        for (int i = 0; i < A.length + 1; i++) {
-            arrayElem = A[i];
-            aList.add(arrayElem);
-            if (!(aList.contains(i))){
-            //TODO: complete code...
-            }
-        }
-    }
 
     public static void main(String[] args) {
         int[] myArray = {2, 3, 1, 5};
