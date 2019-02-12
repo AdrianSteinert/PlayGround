@@ -1,7 +1,9 @@
 package Algorithms.Codility;
 
 public class FrogJmp {
-    public static int solution(int Xposition, int Ydestination, int Distance){
+
+    //this solution works only 1/3 % of the time...
+    public static int solution1(int Xposition, int Ydestination, int Distance){
         if (Ydestination <= 0 || Distance <=0){
             return 0;
         }
@@ -17,7 +19,12 @@ public class FrogJmp {
         return loopCounter;
     }
 
+    // this works 100%!!!
+    public static int solution2 (int X, int Y, int D){
+        return (Y - X + D - 1)/D;
+    }
+
     public static void main(String[] args) {
-        System.out.println(solution(10, 85, 30));
+        System.out.println(solution2(10, 85, 30));
     }
 }
