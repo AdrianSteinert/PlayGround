@@ -1,7 +1,7 @@
 package Algorithms.Binary;
 
 public class BinaryGap {
-    public static int solution (int n){
+    public static int solution1(int n){
         int maxGap = 0;
         int priorIndex1 = 0;
 
@@ -17,7 +17,27 @@ public class BinaryGap {
         return maxGap;
     }
 
+    // 100% Solution!!!
+    public static int solution2 (int N){
+        int max = 0;
+        int current = -100;
+
+        while(N > 0){
+            if (N % 2 == 0){
+                current++;
+            }
+            else{
+                if (current > max){
+                    max = current;
+                }
+                current = 0;
+            }
+            N /= 2;
+        }
+        return max;
+    }
+
     public static void main(String[] args) {
-        System.out.println(solution(32));
+        System.out.println(solution1(32));
     }
 }
