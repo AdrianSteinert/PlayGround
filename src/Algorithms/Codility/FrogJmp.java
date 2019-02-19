@@ -2,7 +2,7 @@ package Algorithms.Codility;
 
 public class FrogJmp {
 
-    //this solution works only 1/3 % of the time...
+    //this solution1 works only 1/3 % of the time...
     public static int solution1(int Xposition, int Ydestination, int Distance){
         if (Ydestination <= 0 || Distance <=0){
             return 0;
@@ -24,7 +24,7 @@ public class FrogJmp {
         return (Y - X + D - 1)/D;
     }
 
-    // and this solution...
+    // and this solution1...
     public static int solution3 (int X, int Y, int D){
         if((Y-X) % D == 0)
             return (Y-X)/D;
