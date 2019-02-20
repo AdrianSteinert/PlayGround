@@ -6,25 +6,28 @@ import java.util.List;
 
 public class PermMissingElem {
     public static int solution (int[] A){
-        Arrays.sort(A);
+        int N = A.length;
 
-        int a, b, c;
-        for (int i = 0; i < A.length+1; i++) {
-                a = A[i];
-                b = A[i+1];
-                if (b - a != 1){
-                    c = b - 1;
-                    return c;
+        for (int i = 1; i <= N + 1; i++) {
+            boolean missingElemFound = false;
+
+            for (int j = 0; j < N; j++){
+                if (A[j] == i){
+                    missingElemFound = true;
                 }
+            }
+            if (!missingElemFound){
+                return i;
+            }
         }
         return 0;
-    }
+}
 
 
     public static void main(String[] args) {
         int[] myArray = {2, 3, 1, 5};
-        //              {1, 2, 3, 5}
+        int[] my2ndArray = {3, 2, 1, 4, 5};
 
-        System.out.println("The missing element in your array is: "+solution(myArray));
+        System.out.println(solution(myArray));
     }
 }
