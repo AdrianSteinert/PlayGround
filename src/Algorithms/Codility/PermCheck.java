@@ -4,19 +4,24 @@ import java.util.Arrays;
 
 public class PermCheck {
     public static int solution(int[] A){
-        boolean[] seen = new boolean[A.length + 1];
+        int N = A.length;
 
-        // repeated elements
-        for (int i = 0; i < A.length; i++) {
-            if(A[i] < 1 || A[i] > A.length) return 0;
-            if(seen[A[i]] == true) return 0;
-            else seen[A[i]] = true;
+        int[] count = new int[1000];
+
+        for (int i = 0; i < N; i++) {
+            count[A[i]] += 1;
         }
-        return 1;
+
+        for (int i = 1; i <=N; i++) {
+            if (count[i] == 0) {
+                return 0;
+            }
+        }
+            return 1;
     }
 
     public static void main(String[] args) {
-        int[] myArray = {4, 0, 2, 3};
+        int[] myArray = {4, 1, 3};
 
         System.out.println(solution(myArray));
     }
