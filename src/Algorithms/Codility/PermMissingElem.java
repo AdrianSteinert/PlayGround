@@ -23,11 +23,20 @@ public class PermMissingElem {
         return 0;
 }
 
+    public static int sol2 (int [] A){
+        int N = A.length+1;
+        int result = N*(N+1)/2;
+        for (int i =0; i < A.length; i++) {
+            result -= A[i];
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         int[] myArray = {2, 3, 1, 5};
         int[] my2ndArray = {3, 2, 1, 4, 5};
 
-        System.out.println(solution(myArray));
+        System.out.println(sol2(my2ndArray));
     }
 }
